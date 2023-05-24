@@ -13,9 +13,11 @@ jobs:
         run: |
           curl https://resources-download.4d.com/release/20.x/20.0/latest/win/tool4d_v20.0_win.tar.xz -o tool4d.tar.xz -sLv
           tar xvzf tool4d.tar.xz -C tool4d
+        shell: bash
       - name: "Run Unit Tests"
         run: |
           ./tool4d/tool4d.exe --project ${{ github.workspace }}\Project\tool4d-action-test.4DProject --dataless --skip-onstartup --startup-method "main"
+
   Unit-tests-on-macos:
     name: Unit Tests on macOS
     runs-on: macOS-latest
