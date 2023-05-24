@@ -18,7 +18,6 @@ jobs:
           ./tool4d/tool4d.exe --project ${{ github.workspace }}\Project\tool4d-action-test.4DProject --dataless --skip-onstartup --startup-method "main"
   Unit-tests-on-macos:
     name: Unit Tests on macOS
-    needs: [Unit-tests-on-windows]
     runs-on: macOS-latest
     permissions: write-all
     steps:
