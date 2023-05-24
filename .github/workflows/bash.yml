@@ -12,6 +12,7 @@ jobs:
       - name: "Download latest tool4d release and expand"
         run: |
           curl https://resources-download.4d.com/release/20.x/20.0/latest/win/tool4d_v20.0_win.tar.xz -o tool4d.tar.xz -sLv
+          file tool4d.tar.xz 
           tar xvzf tool4d.tar.xz -C tool4d
         shell: bash
       - name: "Run Unit Tests"
