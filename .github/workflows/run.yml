@@ -35,3 +35,4 @@ jobs:
         startup-method: main
         user-param: |
           name: "main"
+          test: "main"
