@@ -34,5 +34,5 @@ jobs:
         project: "*"
         startup-method: main
         user-param: |
-          name: "main"
-          test: "main"
+          - name: "main"
+          - test: "main"
