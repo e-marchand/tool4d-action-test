@@ -26,4 +26,4 @@ jobs:
     - name: Build
       uses: e-marchand/build-component-action@main
       with:
-        project: "Project/tool4d-action-test.4DProject"
+        project: "${{ github.workspace }}/Project/tool4d-action-test.4DProject"
