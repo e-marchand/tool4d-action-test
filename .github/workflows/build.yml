@@ -28,4 +28,4 @@ jobs:
       with:
         project: "${{ github.workspace }}/Project/tool4d-action-test.4DProject"
     - name: Check
-      run: ls
+      run: find "{{ github.workspace }}/../.."
