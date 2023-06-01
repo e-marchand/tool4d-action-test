@@ -33,6 +33,4 @@ jobs:
       with:
         project: "*"
         startup-method: main
-        user-param: |
-          - name: "main"
-          - test: "main"
+        user-param: "{ \"name\": \"goodbye\", \"word\": \"world\"}"
