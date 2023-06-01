@@ -13,7 +13,8 @@ var $startupParam : Text
 var $config : Object
 $r:=Get database parameter:C643(User param value:K37:94; $startupParam)
 If (Length:C16($startupParam)>1)
-	
+
+	LOG EVENT:C667(Into system standard outputs:K38:9; $startupParam)
 	$config:=JSON Parse:C1218($startupParam)
 	
 	$message+=$config.name || "hello"
