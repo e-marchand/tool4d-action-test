@@ -33,4 +33,4 @@ jobs:
       with:
         project: "*"
         startup-method: main
-        user-param: "{ \"name\": \"goodbye\", \"word\": \"world\"}"
+        user-param: '{"name": "goodbye", "word": "world"}'
