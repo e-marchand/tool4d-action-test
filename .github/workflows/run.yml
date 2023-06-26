@@ -23,12 +23,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - uses: e-marchand/tool4d-action@main
+    - uses: 4d/tool4d-action@main
       id: tool4drun
       with:
         project: "*"
         startup-method: main
-    - uses: e-marchand/tool4d-action@main
+    - uses: 4d/tool4d-action@main
       id: tool4drunwithparameters
       with:
         project: "*"
