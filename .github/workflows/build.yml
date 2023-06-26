@@ -24,6 +24,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: Build
-      uses: e-marchand/build4d-action@main
+      uses: 4d/build4d-action@main
       with:
         project: "${{ github.workspace }}/Project/tool4d-action-test.4DProject"
