@@ -26,4 +26,4 @@ jobs:
     - name: Build
       uses: 4d/build4d-action@main
       with:
-        project: "${{ github.workspace }}/Project/tool4d-action-test.4DProject"
+        project: "Project/tool4d-action-test.4DProject"
