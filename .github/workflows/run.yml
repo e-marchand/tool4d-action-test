@@ -5,11 +5,13 @@ on:
       - main
     paths-ignore:
       - 'README.md'
+      - '*.yml'
   pull_request:
     branches:
       - main
     paths-ignore:
       - 'README.md'
+      - '*.yml'
   workflow_dispatch:
 
 jobs:
