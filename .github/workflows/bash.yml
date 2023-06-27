@@ -1,4 +1,4 @@
-name: Unit Tests
+name: bash
 on:
   workflow_dispatch:
 jobs:
@@ -26,7 +26,9 @@ jobs:
       - uses: actions/checkout@v3
       - name: "etestzet"
         run: |
+          echo "::group::test"
           echo "::error file=Project/Sources/Methods/main.4dm,line=11::test message."
+          echo "::endgroup::"
       - name: "Download latest tool4d release and expand"
         run: |
           curl https://resources-download.4d.com/release/20.x/20.0/latest/mac/tool4d_v20.0_mac_x86.tar.xz -o tool4d.tar.xz -sL
