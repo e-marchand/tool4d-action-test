@@ -25,5 +25,7 @@ jobs:
       uses: actions/checkout@v3
     - name: Build
       uses: 4d/build4d-action@main
+    - name: Build
+      uses: 4d/build4d-action@main
       with:
         project: "Project/tool4d-action-test.4DProject"
