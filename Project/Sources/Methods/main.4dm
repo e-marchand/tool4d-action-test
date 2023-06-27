@@ -6,7 +6,7 @@
 var $message : Text
 $message:="🎉 "
 
-buildfailed
+build_failed_var_test
 
 var $r : Real
 var $startupParam : Text
