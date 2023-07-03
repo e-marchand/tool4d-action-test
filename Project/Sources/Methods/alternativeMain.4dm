@@ -16,7 +16,7 @@ LAUNCH EXTERNAL PROCESS:C811((Is Windows:C1573) ? "cmd /C SET" : "/usr/bin/env";
 LOG EVENT:C667(Into system standard outputs:K38:9; $out)
 
 
-For each ($line; Split string:C1554($out; (Is Windows:C1573) ? Char:C90(Carriage return:K15:38) : Char:C90(Line feed:K15:40); sk ignore empty strings:K86:1))
+For each ($line; Split string:C1554($out; ((Is Windows:C1573) ? Char:C90(Carriage return:K15:38) : "")+Char:C90(Line feed:K15:40); sk ignore empty strings:K86:1))
 	$pos:=Position:C15("="; $line)
 	If ($pos>0)
 		$env[Substring:C12($line; 1; $pos-1)]:=Substring:C12($line; $pos+1)
