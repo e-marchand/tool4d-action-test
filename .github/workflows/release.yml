@@ -1,11 +1,11 @@
-name: 🚀 release
+name: Release
 on: 
   release:
     types: [published]
 jobs:
   publish:
     name: Publish
-    runs-on: windo-latest
+    runs-on: windows-latest
 
     steps:
       - name: ⬇️ Checkout
