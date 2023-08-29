@@ -18,3 +18,11 @@ jobs:
     - id: echo
       shell: bash
       run: echo "${{ steps.dl.outputs.tool4d }}"
+    - uses: 4d/tool4d-action@main
+      id: dlparam
+      with:
+        product-line: main
+        version: main
+        build: official
+        token: ${{ secrets.TK }}
+          
