@@ -24,5 +24,4 @@ jobs:
         product-line: main
         version: main
         build: official
-        token: ${{ secrets.TK }}
-          
+        token: ${{ secrets.DLTK }}
