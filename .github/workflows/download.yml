@@ -14,14 +14,17 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - uses: 4d/tool4d-action@main
-      id: dl
-    - id: echo
-      shell: bash
-      run: echo "${{ steps.dl.outputs.tool4d }}"
-    - uses: 4d/tool4d-action@main
       id: dlparam
       with:
         product-line: main
         version: main
         build: official
         token: ${{ secrets.DLTK }}
+    - id: echodlparam
+      shell: bash
+      run: echo "${{ steps.dlparam.outputs.tool4d }}"
+    - uses: 4d/tool4d-action@main
+      id: dl
+    - id: echodl
+      shell: bash
+      run: echo "${{ steps.dl.outputs.tool4d }}"
