@@ -24,11 +24,6 @@ jobs:
     permissions: write-all
     steps:
       - uses: actions/checkout@v3
-      - name: "etestzet"
-        run: |
-          echo "::group::test"
-          echo "::error file=Project/Sources/Methods/main.4dm,line=11::test message."
-          echo "::endgroup::"
       - name: "Download latest tool4d release and expand"
         run: |
           curl https://resources-download.4d.com/release/20.x/20.0/latest/mac/tool4d_v20.0_mac_x86.tar.xz -o tool4d.tar.xz -sL
@@ -36,4 +31,20 @@ jobs:
       - name: "Run Project Unit Tests"
         run: |
           ./tool4d.app/Contents/MacOS/tool4d --project ${{ github.workspace }}/Project/tool4d-action-test.4DProject --dataless --skip-onstartup --startup-method "main"
+
+  Unit-tests-on-ubuntu:
+    name: Unit Tests on ubuntu
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - uses: actions/checkout@v3
+      - name: "Download latest tool4d release and expand"
+        run: |
+          curl https://resources-download.4d.com/release/20.x/20.0/latest/mac/tool4d_v20.0_mac_x86.tar.xz -o tool4d.tar.xz -sL
+          tar xvzf tool4d.tar.xz
+      - name: "Run Project Unit Tests"
+        run: |
+          ./bin/tool4d --project ${{ github.workspace }}/Project/tool4d-action-test.4DProject --dataless --skip-onstartup --startup-method "main"
+
+
           
