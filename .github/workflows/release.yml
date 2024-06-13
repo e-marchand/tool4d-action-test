@@ -5,12 +5,15 @@ on:
 jobs:
   publish:
     name: Publish
-    runs-on: windows-latest
+    runs-on: macos-latest
     env:
-       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      RELEASE: 1
+      GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+    permissions:
+      contents: write # for asset upload
     steps:
       - name: ⬇️ Checkout
-        uses: actions/checkout@v3
-      - name: Build with project file path
+        uses: actions/checkout@v4
+      - name: BuildAndRelease
         uses: 4d/build4d-action@main
             
