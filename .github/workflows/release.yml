@@ -14,7 +14,7 @@ jobs:
       - name: ⬇️ Checkout
         uses: actions/checkout@v4
       - name: BuildAndPackage
-        uses: 4d/build4d-action@maketestable
+        uses: 4d/build4d-action@main
         with:
           actions: "build,pack,archive"
       - name: Upload
