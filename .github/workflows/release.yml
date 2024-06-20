@@ -17,7 +17,7 @@ jobs:
       - name: BuildAndPackage
         uses: 4d/build4d-action@maketestable
         with:
-          "actions": "build,pack,archive"
+          actions: "build,pack,archive"
       - name: Upload
         run: |
           gh release upload ${{github.event.release.tag_name}} build/tool4d-action-test.zip
