@@ -7,7 +7,6 @@ jobs:
     name: Publish
     runs-on: macos-latest
     env:
-      RELEASE: 1
       GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
     permissions:
       contents: write # for asset upload
@@ -21,5 +20,3 @@ jobs:
       - name: Upload
         run: |
           gh release upload ${{github.event.release.tag_name}} build/tool4d-action-test.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
