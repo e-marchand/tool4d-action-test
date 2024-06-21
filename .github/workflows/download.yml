@@ -23,10 +23,17 @@ jobs:
     - id: echodlparam
       shell: bash
       run: echo "${{ steps.dlparam.outputs.tool4d }}"
+
+  buildtwo:
+    name: "Download no opt on ${{ matrix.os }}"
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ macos-latest, windows-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
     - uses: 4d/tool4d-action@main
       id: dl
-      if: "${{ matrix.os }} != 'ubuntu-latest'"
     - id: echodl
       shell: bash
-      if: "${{ matrix.os }} != 'ubuntu-latest'"
       run: echo "${{ steps.dl.outputs.tool4d }}"
