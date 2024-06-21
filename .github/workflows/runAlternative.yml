@@ -1,4 +1,4 @@
-name: run
+name: runAlternative
 on:
   workflow_dispatch:
 
