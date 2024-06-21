@@ -8,7 +8,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ macos-latest, windows-latest ]
+        os: [ macos-latest, windows-latest, ubuntu-latest ]
     runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout
@@ -18,3 +18,7 @@ jobs:
       with:
         project: "*"
         startup-method: alternativeMain
+        product-line: main
+        version: main
+        build: official
+        token: ${{ secrets.DLTK }}
