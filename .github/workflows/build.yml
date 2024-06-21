@@ -18,14 +18,24 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ macos-latest, windows-latest ]
+        os: [ macos-latest, windows-latest, ubuntu-latest ]
     runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout
       uses: actions/checkout@v3
     - name: Build
       uses: 4d/build4d-action@main
+      with:
+        product-line: main
+        version: main
+        build: official
+        token: ${{ secrets.DLTK }}
     - name: Build with project file path
       uses: 4d/build4d-action@main
       with:
         project: "Project/tool4d-action-test.4DProject"
+        product-line: main
+        version: main
+        build: official
+        token: ${{ secrets.DLTK }}
+
