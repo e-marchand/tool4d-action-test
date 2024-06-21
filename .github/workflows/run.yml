@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ macos-latest, windows-latest ]
+        os: [ macos-latest, windows-latest, ubuntu-latest ]
     runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout
@@ -30,9 +30,17 @@ jobs:
       with:
         project: "*"
         startup-method: main
+        product-line: main
+        version: main
+        build: official
+        token: ${{ secrets.DLTK }}
     - uses: 4d/tool4d-action@main
       id: tool4drunwithparameters
       with:
         project: "*"
         startup-method: main
         user-param: '{"name": "goodbye", "word": "world"}'
+        product-line: main
+        version: main
+        build: official
+        token: ${{ secrets.DLTK }}
